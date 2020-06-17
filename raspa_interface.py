@@ -461,9 +461,7 @@ class RASPA_calculation(object):
 if __name__ == "__main__":
     # run the program with:
     # run_raspa.py filenames cif_dir flag
-    # example: ../run_raspa.py filenames cifs/ egrid/GCMC/henry flag 
-    # example: ./run_raspa.py filenames cifs/ egrid test 
-    # TODO add a check if the files required do not exist
+    # example: python raspa_interface.py filenames $CIFDIR {egrid/GCMC/henry} $WKDIR 
     with open(sys.argv[1],"r") as fnames:
         cifnames=[n.strip().replace(".cif","") for n in fnames.readlines()]
 
