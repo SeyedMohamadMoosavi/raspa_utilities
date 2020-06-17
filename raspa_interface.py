@@ -157,12 +157,6 @@ def readcif(name):
         return CP, atoms
 
 
-# def find_min_cell(cell):
-#     ew;lgj
-
-
-### Simulation variables ###
-
 
 
 
