@@ -1,0 +1,8 @@
+# rules to overwrite
+0
+# number of defined interactions
+1
+# type      type2       interaction
+C_co2       O_co2       lennard-jones    50.640    2.880
+# mixing rules to overwrite
+0
