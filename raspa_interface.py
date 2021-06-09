@@ -268,6 +268,8 @@ class RASPA_calculation(object):
                     str_out += "Component 0 MoleculeName    %s\n"%(g)
                     str_out += "MoleculeDefinition           %s\n"%self.MoleculeDefinition 
                     str_out += "TranslationProbability      0.5\n"
+                    if not g == "methane":
+                        str_out += "RotationProbability      0.5\n"
 #                    str_out += "RegrowProbability           0.5\n" # the keyword in raspa is different for a reason!?
                     str_out += "ReinsertionProbability      0.5\n"
                     str_out += "SwapProbability             1.0\n"
@@ -471,14 +473,15 @@ if __name__ == "__main__":
     # sim.ExternalPressures=[1e5]
     # sim.ExternalPressures=[1e4]
     # sim.ExternalPressures=[1.5e4,16e5]
+    sim.ExternalPressures=[16e5]
     # sim.ExternalPressures=[16e5]
     # sim.ExternalPressures=[1e3,2.5e3,5e3,7.5e3,1e4,2.5e4,5e4,1e5]
-    sim.ExternalPressures=[1e3,2.5e3,5e3,7.5e3,1e4,2.5e4,5e4,7.5e4,1e5,1.5e5,2.5e5,5e5]
+    # sim.ExternalPressures=[1e3,2.5e3,5e3,7.5e3,1e4,2.5e4,5e4,7.5e4,1e5,1.5e5,2.5e5,5e5]
     # sim.ExternalPressures=[5.8e5,65e5]
     # sim.ExternalPressures=[5.8e5]
     # sim.gascomposition = {"N2":1}
-    # sim.ExternalTemperatures=[298]
-    sim.ExternalTemperatures=[265,320]
+    sim.ExternalTemperatures=[298.15]
+    # sim.ExternalTemperatures=[265,320]
     # sim.ExternalTemperatures=[363]
     # sim.ExternalPressures=[1e4]
     sim.prepare_simulations()

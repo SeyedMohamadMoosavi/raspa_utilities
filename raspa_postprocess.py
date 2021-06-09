@@ -80,13 +80,13 @@ for raspafile,name,sim_temp,sim_p in zip(raspa_files,MOFnames,temperatures,press
             for gas in adsorbates:
                 for k,line in enumerate(isotherm_data[k1:k2]):
                     if "[%s] Average Henry coefficient"%(gas) in line:
-                        kHs.append( line.strip().split()[4])
+                        kHs.append(float( line.strip().split()[4]))
 
             k1,k2 = file_sections["(Note the total heat of adsorption is dH=<U_gh>_1-<U_h>_0 - <U_g> - RT)"]
             for gas in adsorbates:
                 for k,line in enumerate(isotherm_data[k1:k2]):
                     if " Average  <U_gh>_1-<U_h>_0:" in line:
-                        HOAs.append(line.strip().split()[8])
+                        HOAs.append(float(line.strip().split()[8]))
     
             if len(kHs) == len(adsorbates):
                 for gas,kH in zip(adsorbates,kHs):
@@ -123,7 +123,7 @@ for raspafile,name,sim_temp,sim_p in zip(raspa_files,MOFnames,temperatures,press
                 print("Num. components doesn't match with loadings, check this file: %s"%raspafile)
                 continue
         
-    print(adsorption_data)
+#    print(adsorption_data)
 
     # do update or add new entry
     if not name in all_data:
